@@ -1,0 +1,889 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+    background-color: #3e3e41;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #202020;
+}
+
+.navbar {
+    width: 100%;
+    height: 10rem;
+    background-color: #202020;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.brand {
+    display: flex;
+    position: absolute;
+    top: 65%;
+    left: 8rem;
+    transform: translateY(-50%);
+}
+
+.navbar-logo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* .logo1 {
+    width: 6rem;
+    height: 6rem;
+    border: .4rem solid #dba81b;
+}
+
+.logo2 {
+    width: 5rem;
+    height: 5rem;
+    background-color: #202020;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.logo3 {
+    width: 5rem;
+    height: 5rem;
+    border: .4rem solid #dba81b;
+    background-color: #202020;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+} */
+
+.brand span {
+    font-size: 3rem;
+    color: #fff;
+    letter-spacing: .3rem;
+    margin: 1.5rem 0 0 3rem;
+}
+
+.search-bar {
+    position: absolute;
+    top: 50%;
+    right: 15rem;
+    transform: translateY(-50%);
+
+    input {
+        width: 45rem;
+        height: 4rem;
+        background-color: #3e3e41;
+        border: none;
+        padding: 2rem 2rem 2rem 5rem;
+        font-size: 1.6rem;
+        color: #fff;
+        border-radius: .5rem;
+
+    }
+}
+
+.search-bar input::placeholder {
+    color: #ccc;
+} 
+
+.search-bar i {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    color: #ccc;
+}
+
+.menu-icon {
+    width: 4rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 36%;
+    right: 8rem;
+    transform: translate(-50%);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.line {
+    width: 4rem;
+    height: .2rem;
+    background-color: #ccc;
+    transform: all .3s;
+}
+
+.change .line-1 {
+    width: 55%;
+    transform: rotateZ(-15deg) translate(-.2rem, .8rem);
+}
+
+.change .line-3 {
+    width: 55%;
+    transform: rotateZ(15deg) translate(-.2rem, -.8rem);
+}
+
+.navigation {
+    width: 100%;
+    height: 100vh;
+    background-color: #0b0b14;
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.3s;
+}
+
+.change .navigation {
+    top: 0;
+}
+
+.navigation a {
+    font-family: "Archivo Black", cursive;
+    font-size: 5rem;
+    color: #fff;
+    letter-spacing: .3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.change .navigation a {
+    opacity: 1;
+    visibility: visible;
+}
+
+.change .navigation a:nth-child(1) {
+    transition: all .3s .3s;
+}
+
+.change .navigation a:nth-child(2) {
+    transition: all .3s .4s;
+}
+
+.change .navigation a:nth-child(3) {
+    transition: all .3s .5s;
+}
+
+.change .navigation a:nth-child(4) {
+    transition: all .3s .6s;
+}
+
+.navigation a::before {
+    content: "";
+    width: 15rem;
+    height: 0.5rem;
+    background-color: #dba81b;
+    position: absolute;
+    top: 50%;
+    left: -17rem;
+    transform: translateY(-50%);
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform .3s;
+}
+
+.navigation a:hover::before {
+    transform: scale(1);
+}
+
+.navigation a::after {
+    content: "";
+    width: 15rem;
+    height: 0.5rem;
+    background-color: #dba81b;
+    position: absolute;
+    top: 50%;
+    right: -17rem;
+    transform: translateY(-50%);
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform .3s;
+}
+
+.navigation a:hover::after {
+    transform: scale(1);
+}
+
+/* .search-bar input {
+    width: 45rem;
+    height: 4rem;
+    background-color: #3e3e41;
+} */
+
+.landing {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+
+    .landing-img {
+        width: 92%;
+        height: 70vh;
+        position: absolute;
+        top: 11rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 60%;
+        }
+    }
+
+    .banner {
+        position: absolute;
+        bottom: 15rem;
+        left: 20rem;
+
+        .banner-heading {
+            font-size: 9rem;
+            color: #fff;
+
+            span {
+                font-size: 9rem;
+                color: #ffbb00;
+                letter-spacing: .5rem;
+            }
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+
+            p {
+                width: 45rem;
+                font-size: 2rem;
+                color: #fff;
+                margin-right: 2rem;
+            }
+
+            button {
+                width: 15rem;
+                height: 5rem;
+                background-color: transparent;
+                border: .3rem solid #fff;
+                color: #fff;
+                font-size: 1.6rem;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    }   
+}
+
+/* .landing-img {
+    width: 92%;
+    height: 70vh;
+    position: absolute;
+    top: 11rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.landing-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 60%;
+}
+
+.banner {
+    position: absolute;
+    bottom: 15rem;
+    left: 20rem;
+}
+
+.banner-heading {
+    font-size: 9rem;
+    color: #fff;
+}
+
+.banner-heading span {
+    font-size: 9rem;
+    color: #ffbb00;
+    letter-spacing: .5rem;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+}
+
+.banner-content p {
+    width: 45rem;
+    font-size: 2rem;
+    color: #fff;
+    margin-right: 2rem;
+}
+
+.banner-content button {
+    width: 15rem;
+    height: 5rem;
+    background-color: transparent;
+    border: .3rem solid #fff;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+} */
+
+.about {
+    width: 100%;
+    height: 75vh;
+    background-color: #313133;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.about-left h1 {
+    font-size: 5rem;
+    color: #fff;
+    width: 50rem;
+    margin-bottom: 6rem;
+}
+
+.about-left p {
+    font-size: 2rem;
+    color: #fff;
+    width: 50rem;
+    margin-bottom: 5rem;
+}
+
+.about-left button {
+    width: 18rem;
+    height: 5rem;
+    background-color: transparent;
+    border: .2rem solid #ffbb00;
+    color: #ffbb00;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    cursor: pointer;
+}
+
+.frame {
+    width: 50rem;
+    height: 35rem;
+    border: 3rem solid #555;
+    position: absolute;
+    top: 15rem;
+    right: 40rem;
+}
+
+.about-img-wrapper {
+    width: 50rem;
+    height: 35rem;
+    position: absolute;
+    top: 8rem;
+    right: 33rem;
+}
+
+.about-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-bottom {
+    position: absolute;
+    bottom: 2rem;
+    right: 33rem;
+    height: 12rem;
+    border-right: 1rem solid #ffbb00;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.section-bottom h1 {
+    font-size: 6rem;
+    color: #555;
+    letter-spacing: .5rem;
+}
+
+.section-bottom h3 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.my-minecraft-builds {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.minecraft-build-heading {
+    font-size: 8rem;
+    color: #fff;
+    letter-spacing: .2rem;
+    margin: 7rem 0 10rem 9rem;
+}
+
+.cards {
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
+.card {
+    width: 32rem;
+    height: 50rem;
+    margin-right: 2.5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color .6s;
+}
+
+.card:hover .card-content {
+    background-color: rgba(0,0,0,.9);
+}
+
+.card-content::before {
+    content: "";
+    width: 92%;
+    height: 0.1rem;
+    background-color: #ffbb00;
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform .8s;
+}
+
+.card:hover .card-content::before {
+    transform: scale(1);
+}
+
+.card-content::after {
+    content: "";
+    width: .1rem;
+    height: 94%;
+    background-color: #ffbb00;
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    transform: scale(0);
+    transform-origin: top; 
+    transition: transform .8s;
+}
+
+.card:hover .card-content::after {
+    transform: scale(1);
+}
+
+
+.card-content h1 {
+    font-size: 2rem;
+    color: #fff;
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    width: 15rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+.card:hover .card-content h1 {
+    opacity: 1;
+    visibility: visible;
+    transition: all .5s .6s;
+}
+
+.card-content p {
+    font-size: 1.6rem;
+    color: #fff;
+    position: absolute;
+    top: 13rem;
+    left: 4rem;
+    width: 17rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+.card:hover .card-content p {
+    opacity: 1;
+    visibility: visible;
+    transition: all .5s .6s;
+}
+
+.designs {
+    right: 12rem;
+    
+    i {
+        color: #ff0033;
+    }
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 7rem;
+    background-color: #202020;
+    border-top: 0.1rem solid #3e3e41;
+}
+
+.brand-footer {
+    position: absolute;
+    top: 3.5rem;
+    left: 20%;
+}
+
+.brand-footer img {
+    width: 6.8rem;
+    height: 6.8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.brand-footer span {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20%;
+    font-size: 1.6rem;
+    color: #ccc;
+}
+
+
+
+@media(max-width: 1700px) {
+    .banner {
+        left: 12rem;
+    }
+
+    .about-right {
+        margin-right: 20rem;
+    }
+
+    .frame {
+        width: 45rem;
+        height: 30rem;
+        right: 20rem;
+    }
+
+    .about-img-wrapper {
+        width: 45rem;
+        height: 30rem;
+        right: 13rem;
+    }
+
+    .experience {
+        right: 20rem;
+    }
+
+    .my-minecraft-builds {
+        height: 100%;
+    }
+
+    .cards {
+        width: 80%;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 25rem;
+    }
+                        
+    .card {
+        margin: 1.5rem;
+    }                         
+
+    .brand-footer {
+        left: 16%;
+    }
+
+    .copyright {
+        right: 16%;
+    }
+}
+
+@media(max-width: 1400px) {
+    html {
+        font-size: 55%;
+    }
+
+    .frame {
+        width: 40rem;
+        height: 25rem;
+        right: 15rem;
+    }
+
+    .about-img-wrapper {
+        width: 40rem;
+        height: 25rem;
+        right: 8rem;
+    }
+
+    .experience {
+        right: 12rem;
+    }
+}
+
+@media(max-width: 1200px) {
+    html {
+        font-size: 49%;    
+    }
+
+    .about-left p {
+        width: 40rem;
+    }
+
+    .brand-footer {
+        left: 10%;
+    }
+
+    .copyright {
+        right: 10%;
+    }
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 45%;
+    }
+
+    .search-bar input {
+        width: 30rem;
+    }
+
+    .banner-heading {
+        font-size: 7rem;
+        transform: translateY(-70px);
+    }
+
+    .banner-heading span {
+        font-size: 7rem;
+    }
+
+    .banner-content p {
+        font-size: 1.7rem;
+        width: 35rem;
+        transform: translateY(-60px);
+    }
+
+    .banner-content button {
+        transform: translateY(-55px);
+    }
+
+    .about-left h1 {
+        font-size: 3rem;
+        width: 35rem;
+    }
+
+    .about-left p {
+        font-size: 1.7rem;
+        width: 35rem;
+    }
+
+    .frame {
+        width: 30rem;
+        height: 15rem;
+        border: 1.5rem solid #555;
+        right: 10rem;
+    }
+
+    .about-img-wrapper {
+        width: 30rem;
+        height: 15rem;
+        top: 12rem;
+        right: 7rem;
+    }
+
+    .experience {
+        right: 7rem;
+    }
+}
+
+@media(max-width: 600px) {
+    html {
+        font-size: 35%;
+    }
+
+    .brand {
+        left: 2rem;
+    }
+
+    .brand span {
+        display: none;
+    }
+    
+    .search-bar {
+        right: 12rem;
+    }
+
+    .search-bar input {
+        width: 15rem;
+    }
+
+    .menu-icon {
+        right: 2rem;
+    }
+
+    .navigation a {
+        font-size: 3rem;
+    }
+
+    .navigation a::before, .navigation a::after {
+        width: 10rem;
+    } 
+
+    .navigation a::before {
+        left: -13rem;
+    }
+
+    .navigation a::after {
+        right: -13rem;
+    }
+
+    .landing {
+        max-height: 80vh;
+    }
+
+    .landing-img {
+        width: 100%; 
+        height: 60vh;
+        top: 10rem;
+    }
+
+    .banner {
+        left: 2rem;
+        right: 2rem;
+        bottom: 10rem;
+    }
+
+    .banner-heading {
+        transform: translateY(-70px);
+    }
+
+    .banner-content p {
+        transform: translateY(-60px);
+    }
+
+    .banner-content button {
+        transform: translateY(-55px);
+    }
+
+    .landing {
+        & .banner {
+            
+            .banner-heading {
+                font-size: 35px;
+                margin-right: 12px;
+                > span {
+                    font-size: 35px;
+                }
+            }
+
+            & .banner-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+
+/* 
+    .banner-heading {
+        font-size: 5rem;
+    }
+
+    .banner-heading span {
+        font-size: 4rem;
+    } 
+   .banner-content {
+
+    } */
+
+    .banner-content p {
+        width: 100%;
+        max-width: 28rem;
+        margin-bottom: 2rem;
+        font-size: 20px;
+    }
+
+    .about {
+        justify-content: center;
+        height: 100%;
+        padding: 10rem 2rem 12rem 2rem;
+    }
+
+    .about-left {
+        font-size: 50%;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .about-left h1,
+    .about-left p {
+        width: 100%;
+        max-width: 32rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-right,
+    .frame,
+    .about-img-wrapper
+    {
+        display: none;
+    }
+
+    .section-bottom h1 {
+        font-size: 5rem;
+    }
+
+    .minecraft-build-heading {
+        font-size: 6rem;
+        margin: 5rem 2rem;
+    }
+
+    .brand-footer {
+        left: 5%;
+    }
+
+    .copyright {
+        right: 5%;
+        font-size: 1.4rem;
+    }
+}
